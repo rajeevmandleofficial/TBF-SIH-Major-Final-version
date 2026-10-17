@@ -75,7 +75,7 @@ export default function LoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="operator@bitdurg.ac.in"
+                placeholder="operator@transit-scada.org"
                 className="w-full bg-slate-950 border border-slate-800 rounded py-2.5 pl-10 pr-3 text-slate-200 focus:outline-none focus:border-blue-500"
               />
             </div>

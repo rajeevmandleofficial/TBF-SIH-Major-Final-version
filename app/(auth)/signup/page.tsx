@@ -83,7 +83,7 @@ export default function SignupPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="rajeev@bitdurg.ac.in"
+                placeholder="engineer@transit-scada.org"
                 className="w-full bg-slate-950 border border-slate-800 rounded py-2.5 pl-10 pr-3 text-slate-200 focus:outline-none focus:border-emerald-500"
               />
             </div>
