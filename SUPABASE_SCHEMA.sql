@@ -92,32 +92,38 @@ ALTER TABLE public.fans ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.telemetry_readings ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.fault_alerts ENABLE ROW LEVEL SECURITY;
 
--- 10. RLS Policies
--- Allow anyone (public/anon + authenticated) to view SCADA monitoring data
+-- 10. Hardened Row-Level Security (RLS) Policies
+-- Public (anonymous + authenticated) users have READ-ONLY (SELECT) access to view SCADA monitoring data.
+-- Only AUTHENTICATED operators/engineers or backend service roles have WRITE (INSERT, UPDATE) access.
+
+-- 10.1 FANS TABLE POLICIES
 DROP POLICY IF EXISTS "Public and authenticated can read fans" ON public.fans;
 CREATE POLICY "Public and authenticated can read fans"
 ON public.fans FOR SELECT TO public USING (true);
 
-DROP POLICY IF EXISTS "Public and authenticated can update fans" ON public.fans;
-CREATE POLICY "Public and authenticated can update fans"
-ON public.fans FOR UPDATE TO public USING (true) WITH CHECK (true);
+DROP POLICY IF EXISTS "Authenticated operators can update fans" ON public.fans;
+CREATE POLICY "Authenticated operators can update fans"
+ON public.fans FOR UPDATE TO authenticated USING (true) WITH CHECK (true);
 
+-- 10.2 TELEMETRY READINGS TABLE POLICIES
 DROP POLICY IF EXISTS "Public and authenticated can read telemetry" ON public.telemetry_readings;
 CREATE POLICY "Public and authenticated can read telemetry"
 ON public.telemetry_readings FOR SELECT TO public USING (true);
 
-DROP POLICY IF EXISTS "Public and authenticated can insert telemetry" ON public.telemetry_readings;
-CREATE POLICY "Public and authenticated can insert telemetry"
-ON public.telemetry_readings FOR INSERT TO public WITH CHECK (true);
+DROP POLICY IF EXISTS "Authenticated operators can insert telemetry" ON public.telemetry_readings;
+CREATE POLICY "Authenticated operators can insert telemetry"
+ON public.telemetry_readings FOR INSERT TO authenticated WITH CHECK (true);
 
+-- 10.3 FAULT ALERTS TABLE POLICIES
 DROP POLICY IF EXISTS "Public and authenticated can read alerts" ON public.fault_alerts;
 CREATE POLICY "Public and authenticated can read alerts"
 ON public.fault_alerts FOR SELECT TO public USING (true);
 
-DROP POLICY IF EXISTS "Public and authenticated can update alerts" ON public.fault_alerts;
-CREATE POLICY "Public and authenticated can update alerts"
-ON public.fault_alerts FOR UPDATE TO public USING (true) WITH CHECK (true);
+DROP POLICY IF EXISTS "Authenticated operators can update alerts" ON public.fault_alerts;
+CREATE POLICY "Authenticated operators can update alerts"
+ON public.fault_alerts FOR UPDATE TO authenticated USING (true) WITH CHECK (true);
 
-DROP POLICY IF EXISTS "Public and authenticated can insert alerts" ON public.fault_alerts;
-CREATE POLICY "Public and authenticated can insert alerts"
-ON public.fault_alerts FOR INSERT TO public WITH CHECK (true);
+DROP POLICY IF EXISTS "Authenticated operators can insert alerts" ON public.fault_alerts;
+CREATE POLICY "Authenticated operators can insert alerts"
+ON public.fault_alerts FOR INSERT TO authenticated WITH CHECK (true);
+
