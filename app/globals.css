@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-page: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-card-subtle: #f1f5f9;
+    --bg-header: #ffffff;
+    --border-color: #e2e8f0;
+    --border-strong: #cbd5e1;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+    --grid-line: rgba(15, 23, 42, 0.04);
+
+    --status-normal-bg: #ecfdf5;
+    --status-normal-border: #a7f3d0;
+    --status-normal-text: #047857;
+
+    --status-warn-bg: #fffbeb;
+    --status-warn-border: #fde68a;
+    --status-warn-text: #b45309;
+
+    --status-crit-bg: #fef2f2;
+    --status-crit-border: #fecaca;
+    --status-crit-text: #b91c1c;
+
+    --chart-bg: #ffffff;
+    --chart-grid: rgba(15, 23, 42, 0.06);
+    --chart-axis: #64748b;
+  }
+
+  .dark {
+    --bg-page: #090d16;
+    --bg-card: #0f172a;
+    --bg-card-subtle: #1e293b;
+    --bg-header: #0f172a;
+    --border-color: #1e293b;
+    --border-strong: #334155;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --grid-line: rgba(255, 255, 255, 0.03);
+
+    --status-normal-bg: rgba(5, 150, 105, 0.15);
+    --status-normal-border: rgba(5, 150, 105, 0.35);
+    --status-normal-text: #34d399;
+
+    --status-warn-bg: rgba(217, 119, 6, 0.15);
+    --status-warn-border: rgba(217, 119, 6, 0.35);
+    --status-warn-text: #fbbf24;
+
+    --status-crit-bg: rgba(220, 38, 38, 0.15);
+    --status-crit-border: rgba(220, 38, 38, 0.35);
+    --status-crit-text: #f87171;
+
+    --chart-bg: #0f172a;
+    --chart-grid: rgba(255, 255, 255, 0.06);
+    --chart-axis: #94a3b8;
+  }
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  background-image: 
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Monospace telemetry numbers */
+.num-telemetry {
+  font-family: var(--font-jetbrains), monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom engineering scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-card-subtle);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 3px;
+}
