@@ -4,9 +4,11 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4-38bdf8?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
 [![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ecf8e?style=flat&logo=supabase)](https://supabase.com/)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-000000?style=flat&logo=vercel)](https://tbf-sih-major-final-version.vercel.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-> **🏆 v2.0 Successor to our Smart India Hackathon (SIH) 2024 Grand Finale Architecture (Hardware Edition • Built for Delhi Metro Rail Corporation — DMRC)**
+> **🏆 v2.0 Successor to our Smart India Hackathon (SIH) 2024 Grand Finale Architecture (Hardware Edition • Built for Delhi Metro Rail Corporation — DMRC)**  
+> 🌐 **Live Demo:** [https://tbf-sih-major-final-version.vercel.app/](https://tbf-sih-major-final-version.vercel.app/)
 
 An enterprise-grade Condition-Based Monitoring (CBM) and Prognostic Health Management (PHM) SCADA Digital Twin. Fuses high-frequency vibration spectral analysis, motor winding thermal signatures, and authentic **NASA C-MAPSS FD001** run-to-failure degradation modeling to forecast Remaining Useful Life (RUL) prior to catastrophic mechanical shaft seizure.
 
@@ -54,8 +56,8 @@ An enterprise-grade Condition-Based Monitoring (CBM) and Prognostic Health Manag
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/rajeevmandleofficial/tbf-scada-digital-twin.git
-cd tbf-scada-digital-twin
+git clone https://github.com/rajeevmandleofficial/TBF-SIH-Major-Final-version.git
+cd TBF-SIH-Major-Final-version
 ```
 
 ### 2. Install dependencies
@@ -78,11 +80,14 @@ Open [http://localhost:3000](http://localhost:3000) or [http://localhost:8000](h
 
 ---
 
-## ☁️ Deployment on Vercel
+## ☁️ Deployment & Live Demo
 
+* **Live Demo on Vercel:** [https://tbf-sih-major-final-version.vercel.app/](https://tbf-sih-major-final-version.vercel.app/)
+
+### Deploying Your Own Instance:
 1. Push this repository to GitHub.
 2. Sign in to [Vercel](https://vercel.com/) and click **"Add New Project"**.
-3. Import this repository (`tbf-scada-digital-twin`).
+3. Import this repository (`TBF-SIH-Major-Final-version`).
 4. Framework Preset will automatically detect **Next.js**.
 5. Click **Deploy**.
 
